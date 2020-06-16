@@ -35,11 +35,11 @@ public class Post {
         this.url = url;
     }
 
-    public String getComment() {
+    public String getContent() {
         return content;
     }
 
-    public void setComment(String content) {
+    public void setContent(String content) {
         this.content = content;
     }
 
