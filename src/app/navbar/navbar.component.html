@@ -1,0 +1,29 @@
+<nav>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['/home']">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['/blog']">Blog</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['/contact']">Kontakt</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['/add-post']">Dodaj post</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/login" *ngIf="!authService.currentUser">Zaloguj</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/signup" *ngIf="!authService.currentUser">Zarejestruj</a>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" (click)="logOut()"  *ngIf="authService.currentUser">Wyloguj</button>
+    </li>
+  </ul>
+
+
+
+
+</nav>
