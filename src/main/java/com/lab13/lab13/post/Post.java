@@ -2,13 +2,13 @@ package com.lab13.lab13.post;
 
 public class Post {
     private long id;
-    private String title, url, comment;
+    private String title, url, content;
 
-    public Post(long id, String title, String url, String comment) {
+    public Post(long id, String title, String url, String content) {
         this.id = id;
         this.title = title;
         this.url = url;
-        this.comment = comment;
+        this.content = content;
     }
 
     public long getId() {
@@ -36,11 +36,11 @@ public class Post {
     }
 
     public String getComment() {
-        return comment;
+        return content;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setComment(String content) {
+        this.content = content;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class Post {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", url='" + url + '\'' +
-                ", content='" + comment + '\'' +
+                ", content='" + content + '\'' +
                 '}';
     }
 }
