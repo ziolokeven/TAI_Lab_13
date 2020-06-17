@@ -24,5 +24,10 @@ export class DataService {
   createOrUpdate(post) {
     return this.http.post(`${this.url}/api/posts`, post);
   }
+  createPost(data) {
+    return this.http.post(`${this.url}/posts`, { data: JSON.stringify(data) });
+  }
+
+
 
 }

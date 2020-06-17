@@ -12,6 +12,7 @@ import { BlogItemTextComponent } from './components/blog-item-text/blog-item-tex
 import { BlogItemImageComponent } from './components/blog-item-image/blog-item-image.component';
 import { BlogItemDetailsComponent } from './components/blog-item-details/blog-item-details.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+
 import {DataService} from './services/data.service';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
@@ -25,6 +26,9 @@ import {AuthService} from './services/auth.service';
 import {AuthInterceptor} from './services/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { NewPostComponent } from './components/new-post/new-post.component';
+import {AuthenticationService} from "./services/authentication.service";
+import {HttpIntercepterBasicAuthService} from "./services/interceptor-auth.service";
 
 @NgModule({
   declarations: [
@@ -45,7 +49,8 @@ import { SignupComponent } from './components/signup/signup.component';
     SelectizeComponent,
     AddPostComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
@@ -55,10 +60,11 @@ import { SignupComponent } from './components/signup/signup.component';
   ],
   providers: [
     DataService,
+    AuthenticationService,
     AuthService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
+      useClass: HttpIntercepterBasicAuthService,
       multi: true
     },
 
